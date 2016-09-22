@@ -10,7 +10,6 @@
 #import "RedSocket.h"
 #include <netdb.h>
 #include "CanonicalRequest.h"
-#import "ViewController.h"
 #include <zlib.h>
 
 #define CONNECTION_BUFFLEN 0x10000

@@ -29,7 +29,7 @@ int g_rxCounter = 0, g_txCounter = 0;
 {
     self = [super init];
     if (self) {
-        // nothing to do here
+        [self setup];
     }
     return self;
 }
@@ -44,7 +44,8 @@ int g_rxCounter = 0, g_txCounter = 0;
     [[RedSocketManager sharedInstance]
      configureNetworkInterface:@"0.0.0.0"
      gateway:@"0.0.0.0"
-     netmask:@"0.0.0.0" dns:nil];
+     netmask:@"0.0.0.0"
+     dns:nil];
 
 }
 
@@ -68,8 +69,6 @@ int g_rxCounter = 0, g_txCounter = 0;
 {
     NSLog(@"cableDisconnected");
 }
-
-
 
 // If DHCP client is enabled - this callback is made when ip address is assigned
 - (void)didAssignIpAddress:(NSString *)deviceAddress gateway:(NSString *)gateway netmask:(NSString *)netmask
