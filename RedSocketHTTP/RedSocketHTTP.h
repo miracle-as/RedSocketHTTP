@@ -14,4 +14,6 @@
 @property (nonatomic, readonly) NSString * gateway;
 @property (nonatomic, readonly) NSString * netmask;
 
+- (instancetype)init;
+
 @end

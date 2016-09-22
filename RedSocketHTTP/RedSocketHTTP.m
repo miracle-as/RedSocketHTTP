@@ -17,6 +17,7 @@ int g_rxCounter = 0, g_txCounter = 0;
 @interface RedSocketHTTP ()
 <RedSocketManagerDelegate>
 
+// Make them read-write
 @property (nonatomic) NSString * deviceAddress;
 @property (nonatomic) NSString * gateway;
 @property (nonatomic) NSString * netmask;
@@ -62,12 +63,24 @@ int g_rxCounter = 0, g_txCounter = 0;
     
     NSString * fwVersion = [[RedSocketManager sharedInstance] getAccessoryFirmwareVersion];
     NSLog(@"RedSocket firmware version = %@", fwVersion);
+    
+    NSNotificationName notificationName = @"RedSocketHTTPCableConnectedNotification";
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:notificationName
+     object:nil
+     userInfo:nil];
 }
 
 // Cable was disconnected and/or application moved to background
 - (void)cableDisconnected
 {
     NSLog(@"cableDisconnected");
+
+    NSNotificationName notificationName = @"RedSocketHTTPCableDisconnectedNotification";
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:notificationName
+     object:nil
+     userInfo:nil];
 }
 
 // If DHCP client is enabled - this callback is made when ip address is assigned
@@ -78,6 +91,12 @@ int g_rxCounter = 0, g_txCounter = 0;
     self.netmask = netmask;
     
     NSLog(@"ip address assigned %@ %@ %@", deviceAddress, gateway, netmask);
+    
+    NSNotificationName notificationName = @"RedSocketHTTPDidAssignIpAddressNotification";
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:notificationName
+     object:nil
+     userInfo:nil];
 }
 
 
