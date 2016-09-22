@@ -1,6 +1,8 @@
 ﻿using System;
 
 using UIKit;
+using Foundation;
+using System.Diagnostics;
 
 namespace RedSocketHTTPSample
 {
@@ -28,6 +30,33 @@ namespace RedSocketHTTPSample
         partial void SetupButtonTapped (UIButton sender)
         {
             RedSocketHTTP = new RedSocketHTTP.Bindings.iOS.RedSocketHTTP ();
+        }
+
+        partial void GetButtonTapped (UIButton sender)
+        {
+            ResultTextView.Text = "please wait...";
+
+            var urlString = UrlTextField.Text;
+            var url = new NSUrl (urlString);
+
+            var session = NSUrlSession.SharedSession;
+
+            var t = session.CreateDataTask(url, ResponseHandler);
+            t.Resume ();
+        }
+
+        private void ResponseHandler (NSData data, NSUrlResponse response, NSError error)
+        {
+            if (data == null) 
+            {
+                Debug.WriteLine ("no data");
+                return;
+            }
+
+            NSString dataString = NSString.FromData (data, NSStringEncoding.UTF8);
+            InvokeOnMainThread (() => {
+                ResultTextView.Text = dataString;
+            });
         }
     }
 }

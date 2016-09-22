@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="3" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="20" y="20" width="560" height="240"/>
+                            <view contentMode="scaleToFill" id="3" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="20" width="560" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4" translatesAutoresizingMaskIntoConstraints="NO">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
@@ -33,24 +33,60 @@
                                             <action selector="SetupButtonTapped:" destination="BYZ-38-t0r" id="15" eventType="touchUpInside"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="42" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="68" y="0.0" width="60" height="30"/>
+                                        <state key="normal" title="Get">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <constraints>
+                                            <constraint id="47" firstItem="42" firstAttribute="width" constant="60"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="GetButtonTapped:" destination="BYZ-38-t0r" id="59" eventType="touchUpInside"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="49" translatesAutoresizingMaskIntoConstraints="NO" placeholder="URL">
+                                        <rect key="frame" x="136" y="0.0" width="424" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" enablesReturnKeyAutomatically="YES" returnKeyType="go"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1"/>
                                 <constraints>
                                     <constraint id="8" firstAttribute="height" constant="50"/>
                                     <constraint id="9" firstItem="4" firstAttribute="leading" secondItem="3" secondAttribute="leading"/>
                                     <constraint id="10" firstItem="4" firstAttribute="top" secondItem="3" secondAttribute="top"/>
+                                    <constraint id="45" firstItem="42" firstAttribute="leading" secondItem="4" secondAttribute="trailing" constant="8"/>
+                                    <constraint id="46" firstItem="42" firstAttribute="top" secondItem="3" secondAttribute="top"/>
+                                    <constraint id="48" firstItem="42" firstAttribute="height" secondItem="4" secondAttribute="height"/>
+                                    <constraint id="50" firstItem="49" firstAttribute="leading" secondItem="42" secondAttribute="trailing" constant="8"/>
+                                    <constraint id="51" firstItem="49" firstAttribute="top" secondItem="3" secondAttribute="top"/>
+                                    <constraint id="52" firstItem="3" firstAttribute="trailing" secondItem="49" secondAttribute="trailing"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="54" translatesAutoresizingMaskIntoConstraints="NO" editable="NO">
+                                <rect key="frame" x="20" y="78" width="560" height="522"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <constraints>
                             <constraint id="5" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" constant="20"/>
                             <constraint id="6" firstItem="3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20"/>
                             <constraint id="13" firstItem="3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="55" firstItem="54" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="56" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="54" secondAttribute="trailing" constant="20"/>
+                            <constraint id="57" firstItem="54" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top"/>
+                            <constraint id="58" firstItem="54" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="topView" destination="3" id="name-outlet-3"/>
                         <outlet property="SetupButton" destination="4" id="name-outlet-4"/>
+                        <outlet property="GetButton" destination="42" id="name-outlet-42"/>
+                        <outlet property="UrlTextField" destination="49" id="name-outlet-49"/>
+                        <outlet property="ResultTextView" destination="54" id="name-outlet-54"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
