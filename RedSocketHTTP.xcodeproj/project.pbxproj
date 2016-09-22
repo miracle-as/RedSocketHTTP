@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		B18A84371D93DED5005A7EF3 /* RedSocketHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = B18A84361D93DED5005A7EF3 /* RedSocketHTTP.m */; };
 		B18A84381D93DED5005A7EF3 /* RedSocketHTTP.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B18A84351D93DED5005A7EF3 /* RedSocketHTTP.h */; };
+		B18A84401D93DF2E005A7EF3 /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B18A843F1D93DF2E005A7EF3 /* CanonicalRequest.m */; };
+		B18A84431D93DF37005A7EF3 /* RedSocketURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B18A84421D93DF37005A7EF3 /* RedSocketURLProtocol.m */; };
+		B18A84471D93DFAF005A7EF3 /* libRedDebugServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A84451D93DFAF005A7EF3 /* libRedDebugServer.a */; };
+		B18A84481D93DFAF005A7EF3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A84461D93DFAF005A7EF3 /* libz.tbd */; };
+		B18A844A1D93DFB7005A7EF3 /* libRedSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A84491D93DFB7005A7EF3 /* libRedSocket.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +33,14 @@
 		B18A84321D93DED5005A7EF3 /* libRedSocketHTTP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRedSocketHTTP.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18A84351D93DED5005A7EF3 /* RedSocketHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedSocketHTTP.h; sourceTree = "<group>"; };
 		B18A84361D93DED5005A7EF3 /* RedSocketHTTP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedSocketHTTP.m; sourceTree = "<group>"; };
+		B18A843E1D93DF2E005A7EF3 /* CanonicalRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanonicalRequest.h; sourceTree = "<group>"; };
+		B18A843F1D93DF2E005A7EF3 /* CanonicalRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanonicalRequest.m; sourceTree = "<group>"; };
+		B18A84411D93DF37005A7EF3 /* RedSocketURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedSocketURLProtocol.h; sourceTree = "<group>"; };
+		B18A84421D93DF37005A7EF3 /* RedSocketURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedSocketURLProtocol.m; sourceTree = "<group>"; };
+		B18A84451D93DFAF005A7EF3 /* libRedDebugServer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRedDebugServer.a; sourceTree = "<group>"; };
+		B18A84461D93DFAF005A7EF3 /* libz.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libz.tbd; sourceTree = "<group>"; };
+		B18A84491D93DFB7005A7EF3 /* libRedSocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRedSocket.a; sourceTree = "<group>"; };
+		B18A844B1D93E062005A7EF3 /* RedSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedSocket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18A84471D93DFAF005A7EF3 /* libRedDebugServer.a in Frameworks */,
+				B18A84481D93DFAF005A7EF3 /* libz.tbd in Frameworks */,
+				B18A844A1D93DFB7005A7EF3 /* libRedSocket.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +60,7 @@
 		B18A84291D93DED5005A7EF3 = {
 			isa = PBXGroup;
 			children = (
+				B18A84441D93DF9C005A7EF3 /* libs */,
 				B18A84341D93DED5005A7EF3 /* RedSocketHTTP */,
 				B18A84331D93DED5005A7EF3 /* Products */,
 			);
@@ -62,8 +79,23 @@
 			children = (
 				B18A84351D93DED5005A7EF3 /* RedSocketHTTP.h */,
 				B18A84361D93DED5005A7EF3 /* RedSocketHTTP.m */,
+				B18A84411D93DF37005A7EF3 /* RedSocketURLProtocol.h */,
+				B18A84421D93DF37005A7EF3 /* RedSocketURLProtocol.m */,
+				B18A843E1D93DF2E005A7EF3 /* CanonicalRequest.h */,
+				B18A843F1D93DF2E005A7EF3 /* CanonicalRequest.m */,
 			);
 			path = RedSocketHTTP;
+			sourceTree = "<group>";
+		};
+		B18A84441D93DF9C005A7EF3 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				B18A844B1D93E062005A7EF3 /* RedSocket.h */,
+				B18A84491D93DFB7005A7EF3 /* libRedSocket.a */,
+				B18A84451D93DFAF005A7EF3 /* libRedDebugServer.a */,
+				B18A84461D93DFAF005A7EF3 /* libz.tbd */,
+			);
+			path = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18A84431D93DF37005A7EF3 /* RedSocketURLProtocol.m in Sources */,
+				B18A84401D93DF2E005A7EF3 /* CanonicalRequest.m in Sources */,
 				B18A84371D93DED5005A7EF3 /* RedSocketHTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +255,11 @@
 		B18A843C1D93DED5005A7EF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = ../libs;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -230,6 +269,11 @@
 		B18A843D1D93DED5005A7EF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = ../libs;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

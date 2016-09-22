@@ -10,4 +10,8 @@
 
 @interface RedSocketHTTP : NSObject
 
+@property (nonatomic, readonly) NSString * deviceAddress;
+@property (nonatomic, readonly) NSString * gateway;
+@property (nonatomic, readonly) NSString * netmask;
+
 @end
