@@ -1,9 +1,5 @@
 ﻿using System;
-
-using UIKit;
 using Foundation;
-using ObjCRuntime;
-using CoreGraphics;
 
 namespace RedSocketHTTP.Bindings.iOS
 {
@@ -22,6 +18,9 @@ namespace RedSocketHTTP.Bindings.iOS
         // @property (readonly, nonatomic) NSString * netmask;
         [Export ("netmask")]
         string Netmask { get; }
+
+        // -(instancetype)initWithIP:(NSString *)ipAddress gateway:(NSString *)gateway netmask:(NSString *)netmask dns:(NSString *)dns;
+        [Export ("initWithIP:gateway:netmask:dns:")]
+        IntPtr Constructor (string ipAddress, string gateway, string netmask, [NullAllowed] string dns);
     }
 }
-

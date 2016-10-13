@@ -30,12 +30,18 @@ int g_rxCounter = 0, g_txCounter = 0;
 {
     self = [super init];
     if (self) {
-        [self setup];
+        [self setupWithIP:@"0.0.0.0"
+                  gateway:@"0.0.0.0"
+                  netmask:@"0.0.0.0"
+                      dns:nil];
     }
     return self;
 }
 
-- (void)setup
+- (void)setupWithIP:(NSString *)ipAddress
+            gateway:(NSString *)gateway
+            netmask:(NSString *)netmask
+                dns:(NSString *)dns
 {
     [NSURLProtocol registerClass:[RedSocketURLProtocol class]];
     
@@ -43,11 +49,25 @@ int g_rxCounter = 0, g_txCounter = 0;
     
     // Use DHCP first
     [[RedSocketManager sharedInstance]
-     configureNetworkInterface:@"0.0.0.0"
-     gateway:@"0.0.0.0"
-     netmask:@"0.0.0.0"
-     dns:nil];
+     configureNetworkInterface:ipAddress
+     gateway:gateway
+     netmask:netmask
+     dns:dns];
+}
 
+- (instancetype)initWithIP:(NSString *)ipAddress
+                   gateway:(NSString *)gateway
+                   netmask:(NSString *)netmask
+                       dns:(NSString *)dns
+{
+    self = [super init];
+    if (self) {
+        [self setupWithIP:ipAddress
+                  gateway:gateway
+                  netmask:netmask
+                      dns:dns];
+    }
+    return self;
 }
 
 //g_rxCounter = 0;

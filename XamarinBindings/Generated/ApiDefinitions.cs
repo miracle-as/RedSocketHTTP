@@ -1,3 +1,4 @@
+using System;
 using Foundation;
 
 // @interface RedSocketHTTP : NSObject
@@ -15,4 +16,8 @@ interface RedSocketHTTP
 	// @property (readonly, nonatomic) NSString * netmask;
 	[Export ("netmask")]
 	string Netmask { get; }
+
+	// -(instancetype)initWithIP:(NSString *)ipAddress gateway:(NSString *)gateway netmask:(NSString *)netmask dns:(NSString *)dns;
+	[Export ("initWithIP:gateway:netmask:dns:")]
+	IntPtr Constructor (string ipAddress, string gateway, string netmask, string dns);
 }

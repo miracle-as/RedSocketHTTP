@@ -15,5 +15,9 @@
 @property (nonatomic, readonly) NSString * netmask;
 
 - (instancetype)init;
+- (instancetype)initWithIP:(NSString *)ipAddress
+                   gateway:(NSString *)gateway
+                   netmask:(NSString *)netmask
+                       dns:(NSString *)dns;
 
 @end

@@ -29,7 +29,16 @@ namespace RedSocketHTTPSample
 
         partial void SetupButtonTapped (UIButton sender)
         {
-            RedSocketHTTP = new RedSocketHTTP.Bindings.iOS.RedSocketHTTP ();
+            // Using DHCP:
+            // RedSocketHTTP = new RedSocketHTTP.Bindings.iOS.RedSocketHTTP ();
+
+            // Using static IP. DNS can be null if not used.
+            RedSocketHTTP = new RedSocketHTTP.Bindings.iOS.RedSocketHTTP (
+                ipAddress: "192.168.0.100",
+                gateway: "192.168.0.1",
+                netmask: "255.255.255.0",
+                dns: null
+            );
         }
 
         partial void GetButtonTapped (UIButton sender)
